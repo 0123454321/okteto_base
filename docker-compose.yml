@@ -19,4 +19,4 @@ services:
 volumes:
   cloudreve_config:
   aria2:
-  nginx
+  nginx:
