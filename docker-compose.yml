@@ -1,29 +1,12 @@
-services:
-  baota:
-    image: vscwjm/baota:ncloud
-    privileged: true
-    restart: always
-    stdin_open: true
-    tty: true
-    ports:
+services:       
+  caddy: 
+    image: nginx:alpine
+    ports: 
       - 80:80
-      - 81:81
-      - 443:443
-      - 888:888
-      - 2000:2000
-      - 8888:8888
-    volumes:
-      - cloudreve_config:/mnt/cloud
-      - nginx:/mnt/nginx
-       
-    caddy: 
-        image: nginx:alpine
-        ports: 
-            - 80:80
-            - 443:443
-        volumes: 
-            - nginx:/etc/nginx
-        restart: unless-stopped
+       - 443:443
+    volumes: 
+      - nginx:/etc/nginx
+    restart: unless-stopped
       
 volumes:
   cloudreve_config:
