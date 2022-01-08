@@ -1,14 +1,14 @@
 services:
-  caddy: 
-    image: nginx:alpine
-    ports: 
-      - 80:80
-      - 443:443
-    volumes: 
-      - nginx:/etc/nginx
-    restart: unless-stopped
+    caddy: 
+        image: nginx:alpine
+        ports: 
+            - 80:80
+            - 443:443
+        volumes: 
+            - nginx:/etc/nginx
+        restart: unless-stopped
     
-      aria2: 
+    aria2: 
         image: p3terx/aria2-pro
         logging: 
             options: 
