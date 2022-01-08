@@ -14,6 +14,8 @@ services:
       - 8888:8888
     volumes:
       - rootpath:/mnt/rootpath
+      - cloudreve_config:/mnt/cloud
       
 volumes:
   rootpath:
+  cloudreve_config:
