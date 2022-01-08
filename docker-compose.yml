@@ -14,6 +14,9 @@ services:
       - 8888:8888
     volumes:
       - cloudreve_config:/mnt/cloud
+      - nginx:/mnt/nginx
       
 volumes:
   cloudreve_config:
+  aria2:
+  nginx
