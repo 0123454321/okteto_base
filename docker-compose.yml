@@ -16,6 +16,16 @@ services:
       - cloudreve_config:/mnt/cloud
       - nginx:/mnt/nginx
       
+ervices: 
+    caddy: 
+        image: nginx:alpine
+        ports: 
+            - 80:80
+            - 443:443
+        volumes: 
+            - nginx:/etc/nginx
+        restart: unless-stopped
+      
 volumes:
   cloudreve_config:
   aria2:
