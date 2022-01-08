@@ -13,7 +13,7 @@ services:
       - 2000:2000
       - 8888:8888
     volumes:
-      - rootpath:/baota_www:/www
+      - rootpath:/mnt/rootpath
       
 volumes:
   rootpath:
