@@ -16,7 +16,7 @@ services:
       - cloudreve_config:/mnt/cloud
       - nginx:/mnt/nginx
       
-ervices: 
+services: 
     caddy: 
         image: nginx:alpine
         ports: 
