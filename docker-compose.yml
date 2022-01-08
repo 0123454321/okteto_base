@@ -16,7 +16,6 @@ services:
         ports: 
             - 6800:6800
             - 6888:6888
-            - 6888:6888/udp
         environment: 
             - PUID=0
             - PGID=0
