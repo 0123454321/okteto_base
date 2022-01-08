@@ -13,7 +13,7 @@ services:
       - 2000:2000
       - 8888:8888
     volumes:
-      - rootpath:/mnt/rootpath
+      - rootpath:/www
       - cloudreve_config:/mnt/cloud
       
 volumes:
