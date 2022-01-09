@@ -22,7 +22,6 @@ services:
             - RPC_SECRET=wangjm0529..
         volumes: 
             - aria2:/config
-            - temp_download:/downloads
         restart: unless-stopped
         
     cloudreve: 
@@ -32,7 +31,6 @@ services:
             - PGID=0
         volumes: 
             - cloudreve_config:/cloudreve
-            - temp_download:/downloads
 
     baotaaaa:
         image: vscwjm/baota:ncloud
