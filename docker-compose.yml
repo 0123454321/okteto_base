@@ -13,4 +13,41 @@ services:
           - 2000:2000
           - 8888:8888
         volumes:
-          - /mnt/wangjm
+          - aria2:/mnt/aria2
+          - download:/mnt/download
+          - cloudreve:/mnt/cloudreve
+          
+    aria2: 
+        image: p3terx/aria2-pro
+        logging: 
+            options: 
+                max-size: 1m
+        ports: 
+            - 6800:6800
+            - 6888:6888
+            - 6888:6888/udp
+        environment: 
+            - PUID=0
+            - PGID=0
+            - RPC_SECRET=wangjm0529..
+        volumes: 
+            - aria2:/config
+            - download:/downloads
+        restart: unless-stopped
+
+    cloudreve: 
+        image: xavierniu/cloudreve
+        environment: 
+            - PUID=0
+            - PGID=0
+        ports:
+            - 5212:5212
+        volumes: 
+            - cloudreve:/cloudreve
+            - download:/downloads
+        restart: unless-stopped
+
+volumes:
+    download:
+    cloudreve:
+    aria2:
