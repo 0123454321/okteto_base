@@ -1,38 +1,5 @@
 services:
-    caddy: 
-        image: nginx:alpine
-        ports: 
-            - 80:80
-            - 443:443
-        volumes: 
-            - nginx:/etc/nginx
-        restart: unless-stopped
-    
-    aria2: 
-        image: p3terx/aria2-pro
-        logging: 
-            options: 
-                max-size: 1m
-        ports: 
-            - 6800:6800
-            - 6888:6888
-        environment: 
-            - PUID=0
-            - PGID=0
-            - RPC_SECRET=wangjm0529..
-        volumes: 
-            - aria2:/config
-        restart: unless-stopped
-        
-    cloudreve: 
-        image: xavierniu/cloudreve
-        environment: 
-            - PUID=0
-            - PGID=0
-        volumes: 
-            - cloudreve_config:/cloudreve
-
-    baotaaaa:
+    baota:
         image: vscwjm/baota:ncloud
         privileged: true
         restart: always
@@ -44,15 +11,4 @@ services:
           - 443:443
           - 888:888
           - 2000:2000
-          - 8888:8888
-        volumes:
-          - cloudreve_config:/mnt/cloud
-          - nginx:/mnt/nginx
-          - aria2:/mnt/aria2
-          - temp_download:/mnt/temp_ownload
-      
-volumes:
-  cloudreve_config:
-  aria2:
-  nginx:
-  temp_download:  
+          - 8888:8888  
