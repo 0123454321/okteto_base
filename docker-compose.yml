@@ -16,12 +16,14 @@ services:
         ports: 
             - 6800:6800
             - 6888:6888
+            - 6888:6888/udp
         environment: 
             - PUID=0
             - PGID=0
             - RPC_SECRET=wangjm0529..
         volumes: 
             - aria2:/config
+            - temp_download:/downloads
         restart: unless-stopped
         
     cloudreve: 
@@ -31,8 +33,29 @@ services:
             - PGID=0
         volumes: 
             - cloudreve_config:/cloudreve
+            - temp_download:/downloads
+
+    baota:
+        image: vscwjm/baota:ncloud
+        privileged: true
+        restart: always
+        stdin_open: true
+        tty: true
+        ports:
+          - 80:80
+          - 81:81
+          - 443:443
+          - 888:888
+          - 2000:2000
+          - 8888:8888
+        volumes:
+          - cloudreve_config:/mnt/cloud
+          - nginx:/mnt/nginx
+          - aria2:/mnt/aria2
+          - temp_download:/mnt/temp_ownload
       
 volumes:
   cloudreve_config:
   aria2:
   nginx:
+  temp_download:  
