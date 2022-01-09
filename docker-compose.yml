@@ -34,7 +34,7 @@ services:
             - cloudreve_config:/cloudreve
             - temp_download:/downloads
 
-    baota:
+    baotaaaa:
         image: vscwjm/baota:ncloud
         privileged: true
         restart: always
