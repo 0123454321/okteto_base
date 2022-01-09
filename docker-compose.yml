@@ -43,7 +43,7 @@ services:
             - 5212:5212
         volumes: 
             - cloudreve:/cloudreve
-            - download:/downloads
+            - download:/cloudreve/aria2
         restart: unless-stopped
 
 volumes:
