@@ -34,6 +34,7 @@ services:
           - 42981:42981
         volumes:
           - config:/mnt/config
+        command: /sbin/init
 
 volumes:
     config:
