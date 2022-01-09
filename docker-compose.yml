@@ -15,5 +15,25 @@ services:
         volumes:
           - config:/mnt/config
 
+    openwrt:
+        image: sulinggg/openwrt
+        privileged: true
+        restart: always
+        stdin_open: true
+        ports:
+          - 80:80
+          - 443:443
+          - 3000:3000
+          - 5299:5299
+          - 6800:6800
+          - 8081:8081
+          - 8088:8088
+          - 19999:19999
+          - 52657:52657
+          - 54365:54365
+          - 42981:42981
+        volumes:
+          - config:/mnt/config
+
 volumes:
     config:
